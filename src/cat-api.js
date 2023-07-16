@@ -2,7 +2,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 export function fetchBreeds() {
   const loader = document.getElementById("loader");
-  loader.style.display = "block"; // Показати лоадер
+  loader.style.display = "block";
 
   return fetch('https://api.thecatapi.com/v1/breeds', {
     headers: {
@@ -16,13 +16,13 @@ export function fetchBreeds() {
       return response.json();
     })
     .finally(() => {
-      loader.style.display = "none"; // Приховати лоадер
+      loader.style.display = "none"; 
     });
 }
 
 export function fetchCatByBreed(breedId) {
   const loader = document.getElementById("loader");
-  loader.style.display = "block"; // Показати лоадер
+  loader.style.display = "block"; 
 
   return fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`, {
     headers: {
@@ -36,7 +36,7 @@ export function fetchCatByBreed(breedId) {
       return response.json();
     })
     .finally(() => {
-      loader.style.display = "none"; // Приховати лоадер
+      loader.style.display = "none"; 
     });
 }
 

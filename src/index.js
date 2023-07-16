@@ -1,9 +1,12 @@
 import { fetchBreeds, fetchCatByBreed, fetchByUniqueId } from './cat-api';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SlimSelect from 'slim-select';
+import 'slim-select/dist/slimselect.css';
+import 'slim-select/dist/slimselect.umd';
 new SlimSelect({
-  select: '#selectElement'
+  select: '#breed-select'
 })
+
 
 const select = document.querySelector('.breed-select');
 const catInfo = document.querySelector('.cat-info');
