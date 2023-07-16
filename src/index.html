@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 10</title>
-  </head>
-  <body>
-    <select class="breed-select"></select>
-    <p class="loader">Loading data, please wait...</p>
-    <p class="error">Oops! Something went wrong! Try reloading the page!</p>
-    <div class="cat-info"></div>
 
-    <script src="index.js" type="module"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homework 10</title>
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kurale&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <select class="breed-select"></select>
+  <div class="loader" id="loader"></div>
+  <p class="error select-invisible">
+    Oops! Something went wrong! Try reloading the page!</p>
+  <div class="cat-info"></div>
+
+  <script src="index.js" type="module"></script>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/2.6.0/slimselect.umd.min.js"
+    integrity="sha512-0E8oaoA2v32h26IycsmRDShtQ8kMgD91zWVBxdIvUCjU3xBw81PV61QBsBqNQpWkp/zYJZip8Ag3ifmzz1wCKQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
 </html>
+
