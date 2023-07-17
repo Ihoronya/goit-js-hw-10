@@ -1,42 +1,22 @@
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+const url = 'https://api.thecatapi.com/v1';
+const api_key = "live_q7W8CY86BdsefrNUjX8MnZOhXFKNU2Lj1gg4UUEe3r8UDw4FFpsChZCIbavag9rG";
 
 export function fetchBreeds() {
-  const loader = document.getElementById("loader");
-  loader.style.display = "block";
-
-  return fetch('https://api.thecatapi.com/v1/breeds', {
-    headers: {
-      Authorization: 'x-api-key: live_q7W8CY86BdsefrNUjX8MnZOhXFKNU2Lj1gg4UUEe3r8UDw4FFpsChZCIbavag9rG',
-    },
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json();
-    })
-    .finally(() => {
-      loader.style.display = "none"; 
-    });
-}
+    return fetch(`${url}/breeds?api_key=${api_key}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(response.status);
+            }
+            return response.json();
+        });       
+};
 
 export function fetchCatByBreed(breedId) {
-  const loader = document.getElementById("loader");
-  loader.style.display = "block"; 
-
-  return fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`, {
-    headers: {
-      Authorization: 'x-api-key: live_q7W8CY86BdsefrNUjX8MnZOhXFKNU2Lj1gg4UUEe3r8UDw4FFpsChZCIbavag9rG',
-    },
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(response.status);
-      }
-      return response.json();
-    })
-    .finally(() => {
-      loader.style.display = "none"; 
-    });
-}
-
+    return fetch(`${url}/images/search?api_key=${api_key}&breed_ids=${breedId}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(response.status);
+            }
+            return response.json();
+        });  
+};
